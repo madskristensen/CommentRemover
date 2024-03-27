@@ -78,6 +78,33 @@ namespace CommentRemover
                    select s.Span;
         }
 
+        protected static IEnumerable<IMappingSpan> GetSelectionClassificationSpans(IWpfTextView view, string classificationName)
+        {
+            if (view == null)
+            {
+                return Enumerable.Empty<IMappingSpan>();
+            }
+
+            Microsoft.VisualStudio.ComponentModelHost.IComponentModel componentModel = ProjectHelpers.GetComponentModel();
+            IBufferTagAggregatorFactoryService service = componentModel.GetService<IBufferTagAggregatorFactoryService>();
+            ITagAggregator<IClassificationTag> classifier = service.CreateTagAggregator<IClassificationTag>(view.TextBuffer);
+            IEnumerable<IMappingSpan> mappingSpans =
+                from s in classifier.GetTags(view.Selection.SelectedSpans).Reverse()
+                where s.Tag.ClassificationType.Classification.IndexOf(classificationName, StringComparison.OrdinalIgnoreCase) > -1
+                select s.Span;
+            if (mappingSpans.Any())
+            {
+                return mappingSpans;
+            }
+
+
+            IViewTagAggregatorFactoryService serviceViewTag = componentModel.GetService<IViewTagAggregatorFactoryService>();
+            ITagAggregator<IClassificationTag> classifierViewTag = serviceViewTag.CreateTagAggregator<IClassificationTag>(view);
+            return from s in classifierViewTag.GetTags(view.Selection.SelectedSpans).Reverse()
+                   where s.Tag.ClassificationType.Classification.IndexOf(classificationName, StringComparison.OrdinalIgnoreCase) > -1
+                   select s.Span;
+        }
+
         protected static bool IsLineEmpty(ITextSnapshotLine line)
         {
             var text = line.GetText().Trim();

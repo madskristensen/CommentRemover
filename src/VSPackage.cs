@@ -15,6 +15,7 @@ namespace CommentRemover
         protected override async task InitializeAsync(CancellationToken cancellationToken, IProgress<ServiceProgressData> progress)
         {
             await RemoveAllCommentsCommand.InitializeAsync(this);
+            await RemoveAllSelectedComments.InitializeAsync(this);
             await RemoveRegionsCommand.InitializeAsync(this);
             await RemoveXmlDocComments.InitializeAsync(this);
             await RemoveAllExceptXmlDocComments.InitializeAsync(this);
