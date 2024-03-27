@@ -32,6 +32,7 @@ namespace CommentRemover
         public const int RegionGroup = 0x1040;
         public const int TaskGroup = 0x1050;
         public const int RemoveAllComments = 0x0100;
+        public const int RemoveAllSelectedComments = 0x0110;
         public const int RemoveRegions = 0x0200;
         public const int RemoveXmlDocComments = 0x0300;
         public const int RemoveAllExceptXmlDocComments = 0x0400;

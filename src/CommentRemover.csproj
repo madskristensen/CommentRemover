@@ -56,6 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\RemoveAllSelectedComments.cs" />
     <Compile Include="Commands\RemoveAllExceptTaskComments.cs" />
     <Compile Include="Commands\RemoveAllExceptXmlDocComments.cs" />
     <Compile Include="Commands\RemoveTasks.cs" />

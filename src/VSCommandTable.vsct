@@ -6,142 +6,161 @@
   <Include href="KnownImageIds.vsct"/>
 
   <Commands package="guidPackage">
-    <Menus>
-      <Menu guid="guidPackageCmdSet" id="MyMenu" priority="0xFF81" type="Menu">
-        <Parent guid="guidStdEditor" id="IDG_VS_EDITOR_LANGUAGE_INFO" />
-        <Strings>
-          <ButtonText>Comments</ButtonText>
-        </Strings>
-      </Menu>
-    </Menus>
-    <Groups>
-      <Group guid="guidPackageCmdSet" id="CommentsGroup" priority="0x0100">
-        <Parent guid="guidPackageCmdSet" id="MyMenu"/>
-      </Group>
-      <Group guid="guidPackageCmdSet" id="XmlDocGroup" priority="0x0200">
-        <Parent guid="guidPackageCmdSet" id="MyMenu"/>
-      </Group>
-      <Group guid="guidPackageCmdSet" id="TaskGroup" priority="0x0300">
-        <Parent guid="guidPackageCmdSet" id="MyMenu"/>
-      </Group>
-      <Group guid="guidPackageCmdSet" id="RegionGroup" priority="0x0400">
-        <Parent guid="guidPackageCmdSet" id="MyMenu"/>
-      </Group>
-    </Groups>
+	<Menus>
+	  <Menu guid="guidPackageCmdSet" id="MyMenu" priority="0xFF81" type="Menu">
+		<Parent guid="guidStdEditor" id="IDG_VS_EDITOR_LANGUAGE_INFO" />
+		<Strings>
+		  <ButtonText>Comments</ButtonText>
+		</Strings>
+	  </Menu>
+	</Menus>
+	<Groups>
+	  <Group guid="guidPackageCmdSet" id="CommentsGroup" priority="0x0100">
+		<Parent guid="guidPackageCmdSet" id="MyMenu"/>
+	  </Group>
+	  <Group guid="guidPackageCmdSet" id="XmlDocGroup" priority="0x0200">
+		<Parent guid="guidPackageCmdSet" id="MyMenu"/>
+	  </Group>
+	  <Group guid="guidPackageCmdSet" id="TaskGroup" priority="0x0300">
+		<Parent guid="guidPackageCmdSet" id="MyMenu"/>
+	  </Group>
+	  <Group guid="guidPackageCmdSet" id="RegionGroup" priority="0x0400">
+		<Parent guid="guidPackageCmdSet" id="MyMenu"/>
+	  </Group>
+	</Groups>
 
-    <Buttons>
-      <Button guid="guidPackageCmdSet" id="RemoveAllComments" priority="0x0100" type="Button">
-        <Parent guid="guidPackageCmdSet" id="CommentsGroup" />
-        <Icon guid="ImageCatalogGuid" id="Uncomment" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove All Comments</LocCanonicalName>
-          <ButtonText>Remove All</ButtonText>
-        </Strings>
-      </Button>
+	<Buttons>
+	  <Button guid="guidPackageCmdSet" id="RemoveAllComments" priority="0x0100" type="Button">
+		<Parent guid="guidPackageCmdSet" id="CommentsGroup" />
+		<Icon guid="ImageCatalogGuid" id="Uncomment" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove All Comments</LocCanonicalName>
+		  <ButtonText>Remove All</ButtonText>
+		</Strings>
+	  </Button>
 
-      <Button guid="guidPackageCmdSet" id="RemoveXmlDocComments" priority="0x0200" type="Button">
-        <Parent guid="guidPackageCmdSet" id="XmlDocGroup" />
-        <Icon guid="ImageCatalogGuid" id="ClearDictionary" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove XML Doc Comments</LocCanonicalName>
-          <ButtonText>Remove XML Docs</ButtonText>
-        </Strings>
-      </Button>
+	 <Button guid="guidPackageCmdSet" id="RemoveAllSelectedComments" priority="0x0110" type="Button">
+		<Parent guid="guidPackageCmdSet" id="CommentsGroup" />
+		<Icon guid="ImageCatalogGuid" id="FormatSelection" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+			<LocCanonicalName>Remove All Selected Comments</LocCanonicalName>
+			<ButtonText>Remove All Selected</ButtonText>
+		</Strings>
+	 </Button>
 
-      <Button guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" priority="0x0300" type="Button">
-        <Parent guid="guidPackageCmdSet" id="XmlDocGroup" />
-        <Icon guid="ImageCatalogGuid" id="Dictionary" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove All Except XML Doc Comments</LocCanonicalName>
-          <ButtonText>Remove All Except XML Docs</ButtonText>
-        </Strings>
-      </Button>
+	  <Button guid="guidPackageCmdSet" id="RemoveXmlDocComments" priority="0x0200" type="Button">
+		<Parent guid="guidPackageCmdSet" id="XmlDocGroup" />
+		<Icon guid="ImageCatalogGuid" id="ClearDictionary" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove XML Doc Comments</LocCanonicalName>
+		  <ButtonText>Remove XML Docs</ButtonText>
+		</Strings>
+	  </Button>
 
-      <Button guid="guidPackageCmdSet" id="RemoveRegions" priority="0x0400" type="Button">
-        <Parent guid="guidPackageCmdSet" id="RegionGroup" />
-        <Icon guid="ImageCatalogGuid" id="HideCommentGroup" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove Regions</LocCanonicalName>
-          <ButtonText>Remove #Regions</ButtonText>
-        </Strings>
-      </Button>
+	  <Button guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" priority="0x0300" type="Button">
+		<Parent guid="guidPackageCmdSet" id="XmlDocGroup" />
+		<Icon guid="ImageCatalogGuid" id="Dictionary" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove All Except XML Doc Comments</LocCanonicalName>
+		  <ButtonText>Remove All Except XML Docs</ButtonText>
+		</Strings>
+	  </Button>
 
-      <Button guid="guidPackageCmdSet" id="RemoveTaskComments" priority="0x0100" type="Button">
-        <Parent guid="guidPackageCmdSet" id="TaskGroup" />
-        <Icon guid="ImageCatalogGuid" id="DeleteTaskList" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove Task Comments</LocCanonicalName>
-          <ButtonText>Remove Tasks</ButtonText>
-        </Strings>
-      </Button>
+	  <Button guid="guidPackageCmdSet" id="RemoveRegions" priority="0x0400" type="Button">
+		<Parent guid="guidPackageCmdSet" id="RegionGroup" />
+		<Icon guid="ImageCatalogGuid" id="HideCommentGroup" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove Regions</LocCanonicalName>
+		  <ButtonText>Remove #Regions</ButtonText>
+		</Strings>
+	  </Button>
 
-      <Button guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" priority="0x0200" type="Button">
-        <Parent guid="guidPackageCmdSet" id="TaskGroup" />
-        <Icon guid="ImageCatalogGuid" id="TaskList" />
-        <CommandFlag>IconIsMoniker</CommandFlag>
-        <CommandFlag>DynamicVisibility</CommandFlag>
-        <Strings>
-          <LocCanonicalName>Remove All Except Task Comments</LocCanonicalName>
-          <ButtonText>Remove All Except Tasks</ButtonText>
-        </Strings>
-      </Button>
-    </Buttons>
+	  <Button guid="guidPackageCmdSet" id="RemoveTaskComments" priority="0x0100" type="Button">
+		<Parent guid="guidPackageCmdSet" id="TaskGroup" />
+		<Icon guid="ImageCatalogGuid" id="DeleteTaskList" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove Task Comments</LocCanonicalName>
+		  <ButtonText>Remove Tasks</ButtonText>
+		</Strings>
+	  </Button>
+
+	  <Button guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" priority="0x0200" type="Button">
+		<Parent guid="guidPackageCmdSet" id="TaskGroup" />
+		<Icon guid="ImageCatalogGuid" id="TaskList" />
+		<CommandFlag>IconIsMoniker</CommandFlag>
+		<CommandFlag>DynamicVisibility</CommandFlag>
+		<Strings>
+		  <LocCanonicalName>Remove All Except Task Comments</LocCanonicalName>
+		  <ButtonText>Remove All Except Tasks</ButtonText>
+		</Strings>
+	  </Button>
+	</Buttons>
   </Commands>
 
   <VisibilityConstraints>
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllComments" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllComments" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllComments" context="guidXmlUiCmds" />
+	  
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllSelectedComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllSelectedComments" context="guidXmlUiCmds" />
 
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveXmlDocComments" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveXmlDocComments" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveXmlDocComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveXmlDocComments" context="guidXmlUiCmds" />
 
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptXmlDocComments" context="guidXmlUiCmds" />
 
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveTaskComments" context="guidXmlUiCmds" />
 
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveAllExceptTaskComments" context="guidXmlUiCmds" />
 
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveRegions" context="GUID_TextEditorFactory" />
-    <VisibilityItem guid="guidPackageCmdSet" id="RemoveRegions" context="guidXmlUiCmds" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveRegions" context="GUID_TextEditorFactory" />
+	<VisibilityItem guid="guidPackageCmdSet" id="RemoveRegions" context="guidXmlUiCmds" />
   </VisibilityConstraints>
 
   <KeyBindings>
-    <KeyBinding guid="guidPackageCmdSet" id="RemoveAllComments" mod1="Control" key1="K" mod2="Control" key2="Q" editor="guidVSStd97"/>
+	<KeyBinding guid="guidPackageCmdSet" id="RemoveAllComments" mod1="Control" key1="K" mod2="Control" key2="Q" editor="guidVSStd97"/>
+  </KeyBindings>
+
+  <KeyBindings>
+	<KeyBinding guid="guidPackageCmdSet" id="RemoveAllSelectedComments" mod1="Control" key1="K" key2="E" editor="guidVSStd97"/>
   </KeyBindings>
 
   <Symbols>
-    <!-- This is the package guid. -->
-    <GuidSymbol name="guidPackage" value="{34f42dd5-2285-4902-bdfa-6d721e867b57}" />
+	<!-- This is the package guid. -->
+	<GuidSymbol name="guidPackage" value="{34f42dd5-2285-4902-bdfa-6d721e867b57}" />
 
-    <!-- XML editor guid -->
-    <GuidSymbol name="guidXmlUiCmds" value="{fb87333b-16c8-400e-bc8f-f6b890410582}"/>
+	<!-- XML editor guid -->
+	<GuidSymbol name="guidXmlUiCmds" value="{fb87333b-16c8-400e-bc8f-f6b890410582}"/>
 
-    <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidPackageCmdSet" value="{d7952971-879b-431d-b743-70ad7e99e846}">
-      <IDSymbol name="MyMenu" value="0x1000" />
-      <IDSymbol name="CommentsGroup" value="0x1020" />
-      <IDSymbol name="XmlDocGroup" value="0x1030" />
-      <IDSymbol name="RegionGroup" value="0x1040" />
-      <IDSymbol name="TaskGroup" value="0x1050" />
-      <IDSymbol name="RemoveAllComments" value="0x0100" />
-      <IDSymbol name="RemoveRegions" value="0x0200" />
-      <IDSymbol name="RemoveXmlDocComments" value="0x0300" />
-      <IDSymbol name="RemoveAllExceptXmlDocComments" value="0x0400" />
-      <IDSymbol name="RemoveTaskComments" value="0x0500" />
-      <IDSymbol name="RemoveAllExceptTaskComments" value="0x0600" />
-    </GuidSymbol>
+	<!-- This is the guid used to group the menu commands together -->
+	<GuidSymbol name="guidPackageCmdSet" value="{d7952971-879b-431d-b743-70ad7e99e846}">
+	  <IDSymbol name="MyMenu" value="0x1000" />
+	  <IDSymbol name="CommentsGroup" value="0x1020" />
+	  <IDSymbol name="XmlDocGroup" value="0x1030" />
+	  <IDSymbol name="RegionGroup" value="0x1040" />
+	  <IDSymbol name="TaskGroup" value="0x1050" />
+	  <IDSymbol name="RemoveAllComments" value="0x0100" />
+	  <IDSymbol name="RemoveAllSelectedComments" value="0x0110" />
+	  <IDSymbol name="RemoveRegions" value="0x0200" />
+	  <IDSymbol name="RemoveXmlDocComments" value="0x0300" />
+	  <IDSymbol name="RemoveAllExceptXmlDocComments" value="0x0400" />
+	  <IDSymbol name="RemoveTaskComments" value="0x0500" />
+	  <IDSymbol name="RemoveAllExceptTaskComments" value="0x0600" />
+	</GuidSymbol>
   </Symbols>
 </CommandTable>
